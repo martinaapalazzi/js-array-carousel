@@ -12,12 +12,13 @@ img {
 }
 
 .img-container {
-    width: 100%;
-    height: 75vh;
+    width: 300px;
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .item {
@@ -31,4 +32,16 @@ img {
 
 .unactive-item {
     display: none;
+}
+
+.button-up {
+    position: absolute;
+    top: 25px;
+    right: 145px;
+}
+
+.button-down {
+    position: absolute;
+    top: 300px;
+    right: 145px;
 }
