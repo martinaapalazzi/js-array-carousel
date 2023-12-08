@@ -10,27 +10,38 @@ const imgList = [
 const imgContainer = document.querySelector (".img-container")
 console.log (imgContainer)
 
-let currentSlideIndex = 0
-console.log (currentSlideIndex)
+let currentSlideIndex = 0;
+console.log (currentSlideIndex);
 
 for ( let i = 0; i < imgList.length; i++) {
     console.log (imgList[i])
 
-    let doView = 'd-none';
+    //let doView = 'd-none';
 
-    if(currentSlideIndex === i) {
-        doView = 'd-block'
-    }
+    //if(currentSlideIndex === i) {
+    //    doView = 'd-block'
+    //}
     
-    imgContainer.innerHTML += `
-    <div class="item ${doView}">
+    imgContainer.innerHTML +=
+    `<div class= "special_class">
         <img src="${imgList[i]}" alt="">
     </div>`
+    console.log (imgContainer)
+    //`
+    // <div class="item ${doView}">
+    //   <img src="${imgList[i]}" alt="">
+    // </div>`
+};
 
-}
+
+let pincopallo = document.getElementsByClassName("special_class");
+pincopallo[currentSlideIndex].classList.add('activate');
+console.log (pincopallo)
 
 
-const buttonDown = document.querySelector (".button-down")
+
+
+/*const buttonDown = document.querySelector (".button-down")
 console.log (buttonDown)
 buttonDown.addEventListener ("click", function() {
     currentSlideIndex  
