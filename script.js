@@ -32,32 +32,28 @@ console.log (displayPics);
 const buttonDown = document.querySelector (".button-down");
 console.log (buttonDown);
 buttonDown.addEventListener ("click", function() {
-    console.log(currentSlideIndex) 
+    console.log(currentSlideIndex);
+    displayPics[currentSlideIndex].classList.remove("activate");
     if (currentSlideIndex < (displayPics.length-1)){
-        displayPics[currentSlideIndex].classList.remove("activate");
         currentSlideIndex++;
-        displayPics[currentSlideIndex].classList.add("activate");
     }
-    else if (currentSlideIndex == (displayPics - 1)) {
-        displayPics[currentSlideIndex].classList.remove("activate");
-        currentSlideIndex == 0;
-        displayPics[currentSlideIndex].classList.add("activate");
+    else {
+        currentSlideIndex = 0;
     }
+    displayPics[currentSlideIndex].classList.add("activate");
 })
 
 const buttonUp = document.querySelector (".button-up");
 console.log (buttonUp);
 buttonUp.addEventListener ("click", function() {
+    displayPics[currentSlideIndex].classList.remove("activate");
     if (currentSlideIndex > 0 ) {
-        displayPics[currentSlideIndex].classList.remove("activate");
         currentSlideIndex--;
-        displayPics[currentSlideIndex].classList.add("activate");
     }
-    else if (currentSlideIndex == 0) {
-        displayPics[currentSlideIndex].classList.remove("activate");
-        currentSlideIndex = displayPics.length;
-        displayPics[currentSlideIndex].classList.add("activate");
+    else {
+        currentSlideIndex = (displayPics.length - 1);
     }
+    displayPics[currentSlideIndex].classList.add("activate");
     
 })
 
