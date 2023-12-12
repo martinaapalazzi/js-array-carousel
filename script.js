@@ -7,6 +7,7 @@ const imgList = [
     '05.webp'
 ];
 
+
 const imgContainer = document.querySelector (".img-container")
 console.log (imgContainer)
 
@@ -14,47 +15,56 @@ let currentSlideIndex = 0;
 console.log (currentSlideIndex);
 
 for ( let i = 0; i < imgList.length; i++) {
-    console.log (imgList[i])
+    console.log (imgList[i]);
 
-    //let doView = 'd-none';
-
-    //if(currentSlideIndex === i) {
-    //    doView = 'd-block'
-    //}
-    
     imgContainer.innerHTML +=
-    `<div class= "special_class">
-        <img src="${imgList[i]}" alt="">
-    </div>`
-    console.log (imgContainer)
-    //`
-    // <div class="item ${doView}">
-    //   <img src="${imgList[i]}" alt="">
-    // </div>`
+        `<div class= "item">
+            <img src="${imgList[i]}" alt="">
+        </div>`;
+    console.log (imgContainer);
+
 };
 
+let displayPics = document.getElementsByClassName("item");
+displayPics[currentSlideIndex].classList.add("activate");
+console.log (displayPics);
 
-let pincopallo = document.getElementsByClassName("special_class");
-pincopallo[currentSlideIndex].classList.add('activate');
-console.log (pincopallo)
-
-
-
-
-/*const buttonDown = document.querySelector (".button-down")
-console.log (buttonDown)
+const buttonDown = document.querySelector (".button-down");
+console.log (buttonDown);
 buttonDown.addEventListener ("click", function() {
-    currentSlideIndex  
+    console.log(currentSlideIndex) 
+    if (currentSlideIndex < (displayPics.length-1)){
+        displayPics[currentSlideIndex].classList.remove("activate");
+        currentSlideIndex++;
+        displayPics[currentSlideIndex].classList.add("activate");
+    }
+    else if (currentSlideIndex == (displayPics - 1)) {
+        displayPics[currentSlideIndex].classList.remove("activate");
+        currentSlideIndex == 0;
+        displayPics[currentSlideIndex].classList.add("activate");
+    }
 })
 
-const buttonUp = document.querySelector (".button-up")
-console.log (buttonUp)
+const buttonUp = document.querySelector (".button-up");
+console.log (buttonUp);
 buttonUp.addEventListener ("click", function() {
-    if ( I click buttonUp then currentSlideIndex-- ) {
-
+    if (currentSlideIndex > 0 ) {
+        displayPics[currentSlideIndex].classList.remove("activate");
+        currentSlideIndex--;
+        displayPics[currentSlideIndex].classList.add("activate");
+    }
+    else if (currentSlideIndex == 0) {
+        displayPics[currentSlideIndex].classList.remove("activate");
+        currentSlideIndex = displayPics.length;
+        displayPics[currentSlideIndex].classList.add("activate");
     }
     
 })
+
+
+
+
+
 
 
 
@@ -77,22 +87,3 @@ buttonUp.addEventListener ("click", function() {
  */
 
 
-
-/*imgContainer.innerHTML = ( `
-    <div class="item active-item">
-        <img src="01.webp" alt="">
-    </div>
-    <div class="item unactive-item">
-        <img src="02.webp" alt="">
-    </div>
-    <div class="item unactive-item">
-        <img src="03.webp" alt="">
-    </div>
-    <div class="item unactive-item">
-        <img src="04.webp" alt="">
-    </div>
-    <div class="item unactive-item">
-        <img src="05.webp" alt="">
-    </div>
-    `
-)*/ 

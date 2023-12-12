@@ -21,12 +21,12 @@ img {
 
 .img-container {
     width: 300px;
-    height: 200px;
+    height: 380px;
     border: 2px dotted red;
     margin: 10px;
 }
 
-.special_class {
+.item {
     display: none;
 }
 
@@ -34,9 +34,6 @@ img {
     display: block;
 }
 
-.unactive-item {
-    display: none;
-}
 
 /*.button-up {
     position: absolute;
