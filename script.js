@@ -41,6 +41,20 @@ buttonDown.addEventListener ("click", function() {
         currentSlideIndex = 0;
     }
     displayPics[currentSlideIndex].classList.add("activate");
+});
+
+let autoplayInterval = setInterval(goToNextSlide, 3000);
+
+const stopAutoplay = document.getElementById("stop-autoplay");
+
+stopAutoplay.addEventListener('click', function(){
+    if (autoplayInterval == null) {
+        clearInterval(autoplayInterval);
+    }
+    else if () {
+        
+    }
+
 })
 
 const buttonUp = document.querySelector (".button-up");
@@ -55,7 +69,25 @@ buttonUp.addEventListener ("click", function() {
     }
     displayPics[currentSlideIndex].classList.add("activate");
     
-})
+});
+
+
+
+
+
+/* FUNZIONI */
+
+function goToNextSlide() {
+    console.log(currentSlideIndex);
+    displayPics[currentSlideIndex].classList.remove("activate");
+    if (currentSlideIndex < (displayPics.length-1)){
+        currentSlideIndex++;
+    }
+    else {
+        currentSlideIndex = 0;
+    }
+    displayPics[currentSlideIndex].classList.add("activate");
+}
 
 
 
