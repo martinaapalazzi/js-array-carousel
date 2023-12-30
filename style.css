@@ -14,7 +14,7 @@ img {
 
 .container {
     display: flex;
-    flex-direction: column;
+    
     justify-content: center;
     align-items: center;
 }
@@ -22,7 +22,6 @@ img {
 .img-container {
     width: 300px;
     height: 380px;
-    border: 2px dotted red;
     margin: 10px;
 }
 
@@ -34,15 +33,37 @@ img {
     display: block;
 }
 
+h1 {
+    text-align: center;
+}
 
-/*.button-up {
-    position: absolute;
-    top: 25px;
-    right: 145px;
+.button-up {
+    background-color: white;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
 
 .button-down {
-    position: absolute;
-    top: 300px;
-    right: 145px;
-}*/
+    background-color: white;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.autoplay-container {
+    display: flex;
+    justify-content: center;
+}
+
+#stop-autoplay {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    width: 300px;
+    height: 50px;
+    text-transform: uppercase;
+}

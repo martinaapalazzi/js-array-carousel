@@ -31,48 +31,27 @@ console.log (displayPics);
 
 const buttonDown = document.querySelector (".button-down");
 console.log (buttonDown);
-buttonDown.addEventListener ("click", function() {
-    console.log(currentSlideIndex);
-    displayPics[currentSlideIndex].classList.remove("activate");
-    if (currentSlideIndex < (displayPics.length-1)){
-        currentSlideIndex++;
-    }
-    else {
-        currentSlideIndex = 0;
-    }
-    displayPics[currentSlideIndex].classList.add("activate");
-});
+buttonDown.addEventListener ("click", goToNextSlide);
 
-let autoplayInterval = setInterval(goToNextSlide, 3000);
+let autoplayInterval = setInterval(goToNextSlide, 2000);
 
 const stopAutoplay = document.getElementById("stop-autoplay");
 
 stopAutoplay.addEventListener('click', function(){
     if (autoplayInterval == null) {
+        autoplayInterval = setInterval(goToNextSlide, 2000);
+        stopAutoplay.innerHTML = "ferma autoplay";
+    }
+    else {
         clearInterval(autoplayInterval);
+        autoplayInterval = null;
+        stopAutoplay.innerHTML = "riavvia autoplay";
     }
-    else if () {
-        
-    }
-
-})
+});
 
 const buttonUp = document.querySelector (".button-up");
 console.log (buttonUp);
-buttonUp.addEventListener ("click", function() {
-    displayPics[currentSlideIndex].classList.remove("activate");
-    if (currentSlideIndex > 0 ) {
-        currentSlideIndex--;
-    }
-    else {
-        currentSlideIndex = (displayPics.length - 1);
-    }
-    displayPics[currentSlideIndex].classList.add("activate");
-    
-});
-
-
-
+buttonUp.addEventListener ("click", goToPrevSlide);
 
 
 /* FUNZIONI */
@@ -87,8 +66,18 @@ function goToNextSlide() {
         currentSlideIndex = 0;
     }
     displayPics[currentSlideIndex].classList.add("activate");
-}
+};
 
+function goToPrevSlide() {
+    displayPics[currentSlideIndex].classList.remove("activate");
+    if (currentSlideIndex > 0 ) {
+        currentSlideIndex--;
+    }
+    else {
+        currentSlideIndex = (displayPics.length - 1);
+    }
+    displayPics[currentSlideIndex].classList.add("activate");
+}
 
 
 
